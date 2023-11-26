@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        table {
+            text-align: left;
+            border-spacing: 0;
+        }
+        table th, td {
+            border: 1px solid #ccc;
+        }
+    </style>
+    <body>
+        <button id="csvButton">Export to CSV</button>
+        <button id="excelButton">Export to Excel</button>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Experience</th>
+            </tr>
+            <tr>
+                <td>John Smith</td>
+                <td>Marketing</td>
+                <td>5 Years</td>
+            </tr>
+            <tr>
+                <td>Adam Kenneth</td>
+                <td>Development</td>
+                <td>3 Years</td>
+            </tr>
+            <tr>
+                <td>Julia Williams</td>
+                <td>HR</td>
+                <td>12 Years</td>
+            </tr>
+        </table>
+    </body>
+    <script type="module">
+        import { exportTable } from './main.js';
+        document
+          .querySelector('#csvButton')
+          .addEventListener('click', () => exportTable('csv'));
+
+        document
+          .querySelector('#excelButton')
+          .addEventListener('click', () => exportTable('excel'));
+    </script>
+</html>
